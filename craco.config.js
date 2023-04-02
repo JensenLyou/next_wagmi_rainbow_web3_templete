@@ -1,3 +1,5 @@
+const CracoLessPlugin = require("craco-less");
+
 module.exports = {
   webpack: {
     configure: (config, { env, paths }) => {
@@ -8,6 +10,7 @@ module.exports = {
       return config;
     },
   },
+  plugins: [{ plugin: CracoLessPlugin }],
   devServer: {
     proxy: {
       "/api": {
