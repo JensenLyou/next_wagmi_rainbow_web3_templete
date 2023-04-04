@@ -11,15 +11,15 @@ module.exports = {
     },
   },
   plugins: [{ plugin: CracoLessPlugin }],
-  devServer: {
-    proxy: {
-      "/api": {
-        target: "",
-        changeOrigin: true,
-        pathRewrite: {
-          "^/api": "/api",
-        },
-      },
-    },
-  },
+  // devServer: {
+  //   proxy: {
+  //     "/api": {
+  //       target: "",
+  //       changeOrigin: true,
+  //       pathRewrite: {
+  //         "^/api": "/api",
+  //       },
+  //     },
+  //   },
+  // },
 };
