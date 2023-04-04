@@ -8,14 +8,17 @@ import { chains, wagmiClient } from "./config/client";
 
 import "./index.less";
 import "@rainbow-me/rainbowkit/styles.css";
+import AuthRouter from "./provider/AuthRouter";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <WagmiConfig client={wagmiClient}>
-    <RainbowKitProvider chains={chains}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </RainbowKitProvider>
-  </WagmiConfig>
+  <BrowserRouter>
+    <WagmiConfig client={wagmiClient}>
+      <RainbowKitProvider chains={chains}>
+        <AuthRouter>
+          <App />
+        </AuthRouter>
+      </RainbowKitProvider>
+    </WagmiConfig>
+  </BrowserRouter>
 );
